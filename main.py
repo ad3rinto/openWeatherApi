@@ -12,13 +12,14 @@ LON = -2.193189
 SITE_PARAMS = {
     "lat": LAT,
     "lon": LON,
+    "cnt":4,
     "appid": os.getenv("APPID")
 }
 
 r = requests.get(URL, params=SITE_PARAMS)
 r.status_code
 data = r.json()
-list_of_hourly = data["list"][0:5]
+list_of_hourly = data["list"]
 
 is_rain = "rain"
 
