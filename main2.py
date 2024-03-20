@@ -1,9 +1,11 @@
 import requests
+from twilio.rest import Client
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
+account_sid = os.getenv("ACC_SID")
+auth_token = os.getenv("AUTH_TOKEN")
 
 URL = "https://api.openweathermap.org/data/2.5/forecast"
 LAT = 53.380149
