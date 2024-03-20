@@ -21,10 +21,8 @@ r.status_code
 data = r.json()
 list_of_hourly = data["list"]
 
-is_rain = "rain"
-
-for i in list_of_hourly:
-    if i.get(is_rain):
-        print(f"E go rain o, for {i["dt_txt"].split()[1]}")
+for p in list_of_hourly:
+    if p["weather"][0]["id"] < 700:
+        print(f"It is forecasted to rain at {p["dt_txt"].split()[1]} hrs")
     else:
-        print(f"No rain at {i["dt_txt"].split()[1]}")
+        print(f'It is not forecasted to rain at {p["dt_txt"].split()[1]} hrs')
