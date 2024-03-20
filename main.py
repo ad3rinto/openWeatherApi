@@ -32,7 +32,7 @@ if will_rain:
     client = Client(account_sid, auth_token)
     message = client.messages \
         .create(
-            body="You need an umbrella as it is going to rain ☔️",
+            body="You need an umbrella as it is going to rain sometime within the next 12 hours ☔️",
             from_='+447488879613',
             to='+447746302442'
         )
